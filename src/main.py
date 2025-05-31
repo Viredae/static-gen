@@ -1,6 +1,6 @@
 import os
 import shutil
-from sys import argv
+import sys
 
 from copystatic import copy_files_recursive
 from gencontent import generate_pages_recursive
@@ -11,7 +11,12 @@ dir_path_content = "./content"
 template_path = "./template.html"
 
 
-def main(basepath = "/static-gen/"):
+def main():
+    if len(sys.argv) > 1:
+        basepath = sys.argv[1]
+    else:
+        basepath = "/"
+        
     print("Deleting public directory...")
     if os.path.exists(dir_path_public):
         shutil.rmtree(dir_path_public)
