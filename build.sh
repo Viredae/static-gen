@@ -1,1 +1,1 @@
-python3 src/main.py "/https://github.com/Viredae/static-gen/" 
+python3 src/main.py "/static-gen/" 
